@@ -25,3 +25,36 @@
   .hero::after{background-position:68% center}
   .hero::before{background:linear-gradient(180deg,#f6eee8 0%,rgba(246,238,232,.98) 22%,rgba(246,238,232,.9) 45%,rgba(246,238,232,.48) 70%,transparent 100%)}
 }
+
+/* UX mobile e imagem apenas no desktop (1025px ou mais).
+   Em telas pequenas o banner não gera download nem exibe a escultura. */
+.mobile-brand{display:none}
+@media(max-width:1024px){
+  .hero::after,.hero::before{content:none;display:none}
+  .hero{min-height:0;background:linear-gradient(125deg,#fbf8f5 0%,#f3e8f1 100%);border:1px solid #eadde6}
+  .hero-copy{min-width:0;max-width:740px;padding:36px 38px}
+  .hero h1{max-width:660px}
+  .hero p{max-width:580px}
+}
+@media(max-width:790px){
+  .topbar{height:auto;min-height:74px;flex-wrap:wrap;gap:10px 12px;padding:15px 22px 13px}
+  .mobile-menu{order:0}
+  .mobile-brand{display:inline-flex;align-items:center;order:1;font:500 29px/1 var(--serif);letter-spacing:-.045em;color:var(--ink);margin-right:auto}
+  .topbar-right{display:none}
+  .search-form{order:2;flex:0 0 100%;max-width:none}
+  .hero-copy{max-width:100%;padding:32px}
+  .hero h1{font-size:clamp(33px,6vw,48px)}
+}
+@media(max-width:590px){
+  .topbar{padding:13px 15px 12px;gap:11px}
+  .mobile-brand{font-size:28px}
+  .hero{min-height:0;border-radius:15px}
+  .hero-copy{padding:29px 23px 28px}
+  .hero h1{font-size:clamp(32px,9vw,41px);line-height:1.1;margin:11px 0 12px}
+  .hero p{font-size:14px;line-height:1.65;max-width:none}
+  .hero .mini-rule{margin:16px 0}
+  .hero-buttons{display:flex;flex-direction:column;align-items:stretch;gap:9px;margin-top:20px}
+  .hero-buttons .btn{width:100%;font-size:13px;min-height:46px}
+  .section-bar{gap:8px;align-items:flex-start}
+  .section-bar h2{font-size:25px}
+}
